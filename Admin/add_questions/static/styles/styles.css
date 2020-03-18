@@ -1,0 +1,17 @@
+.top {
+    border: solid purple;
+    display: block;
+    color: gray;
+    width: 100%;
+    height: 100%;
+}
+
+.one {
+    border: thin solid #444444;
+    display: table-row; width: 50%;
+}
+
+.two {
+    border: thin solid #444444;
+    display: table-row; width: 50%;
+}

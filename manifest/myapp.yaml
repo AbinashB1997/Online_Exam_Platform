@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: codedeploy-service
+spec:
+  selector:
+    type: codedeploy
+  type: NodePort
+  ports:
+  - port: 5001
+    targetPort: 5001
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codedeploy-deployment
+spec:
+  selector:
+    matchLabels:
+      type: codedeploy
+  template:
+    metadata:
+      labels:
+        type: codedeploy
+    spec:
+      containers:
+      - name: codedeploy-container
+        image: did09/finalcode
+        ports:
+        - containerPort: 5001
+        volumeMounts:
+        - name: k8storage
+          mountPath: /data/
+      volumes:
+      - name: k8storage
+        persistentVolumeClaim:
+          claimName: mongo-claim

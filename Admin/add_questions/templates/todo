@@ -1,0 +1,7 @@
+3 dbs
+collection
+    c1: python
+    c2: c++ etc
+1 db: Questions
+2 db: User db => which questions are attempted by each User
+3 db: 
