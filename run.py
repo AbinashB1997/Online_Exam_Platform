@@ -53,12 +53,12 @@ def runIT(is_present):
                             os.system('./a.out ' + ' < ' + 'Admin/input.in/inp' + str(Question_Number) + '.txt' + ' > ' + 'Admin/user_out/output_' + userName + '/out' + str(Question_Number) + '.txt')
 
 def sender():
-    return str('abinash.biswal@gslab.com')
+    return str('NAME@DOMAIN.com')
 def receiver():
-    return str('abinashbiswal248@gmail.com')
+    return str('NAME@DOMAIN.com')
 
 def token():
-    return str('frawrczyqooeolcm')
+    return str('<YOUR TOKEN>')
 
 def send_email(user, pwd, recipient, subject, body, data):
     msg = MIMEMultipart()
@@ -179,7 +179,7 @@ def testing():
                     msgHR += str(regNum) + "has cleared the online test with " + percentage + ' %'
                 else:
                     msgHR += str(regNum) + " did not able to clear the test"
-                send_email(sender(), token(), "abinashbiswal247@gmail.com", 'REPORT', 'Your exam result', msgHR)
+                send_email(sender(), token(), "NAME@DOMAIN.com", 'REPORT', 'Your exam result', msgHR)
             else:
                 print('Already done!')
                 # os.system('rm -R ./Admin/user_out')
